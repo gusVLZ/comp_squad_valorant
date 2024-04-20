@@ -2,11 +2,28 @@
     min-height: 90vh;
     margin: 3em;
     padding: 1em 2em 2em 2em ;
-    background-color: darkred;
+    background-color: #ab3640;
     width: calc(100%-6em);
     border-radius: 1em;
 }
 
 .layoutClass * {
     color: white;
+}
+
+.h1TopMenu{
+    font-family: "Valorant";
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.h2TopMenu{
+    font-family: "Valorant";
+    text-align: left;
+}
+
+
+@font-face {
+    font-family: 'Valorant';
+    src: url("../fonts/Valorant Font.ttf") format("truetype");
 }
