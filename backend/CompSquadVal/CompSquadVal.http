@@ -1,0 +1,6 @@
+@CompSquadVal_HostAddress = http://localhost:5183
+
+GET {{CompSquadVal_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
