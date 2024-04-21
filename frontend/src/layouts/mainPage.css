@@ -1,0 +1,95 @@
+.mainPage{
+    min-height: 90vh;
+    margin: 2%;
+    padding: 0.5% 1% 1% 1%;
+    background-color: #2c3143;
+    color: #FFFBF5;
+    width: 96%;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainPage * {
+    color: #FFFBF5;
+}
+
+.homeWrapper{
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.h2{
+    font-family: 'Valorant';
+    margin: none;
+    line-height: 3em;
+    font-size: 1.5em;
+}
+
+.h1{
+    font-family: 'Valorant';
+}
+
+.drawer{
+    min-height: 100vh;
+    background-color: #FD4556;
+    width: calc(100%-10em);
+    border-radius: 0 1em 1em 0;
+}
+
+.MuiDrawer-content{
+    background-color: transparent !important; 
+}
+
+.listdrawer{
+    color: #FFFBF5;
+}
+
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.toggleBtn{
+    color: #FD4556 !important;
+}
+
+.toggleGroup{
+    align-content: center !important;
+    margin-bottom: 15px;
+}
+
+.h4{
+    color: #FD4556;
+}
+
+.userName{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.nickName{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.btnCreateSquad{    
+    display: flex;
+    justify-content: center;
+}
+
+.squadButtonsInvite{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.squadsList{
+    
+}
+

@@ -1,13 +1,83 @@
-import { Button } from "@mui/joy";
 import React from "react";
-export default function HomePage() {
+import axios from "axios";
+import { Divider, Button, List } from "@mui/joy";
+import Squad from "../components/squad";
 
-    //https://mui.com/joy-ui/getting-started/tutorial/
-    return (
-        <>
-            <h1>Hey from HomePage</h1>
-            <p>This is your awesome HomePage subtitle</p>
-            <Button>testes</Button>
-        </>
-    );
+export default function Home() {
+	const [userName, setUserName] = React.useState()
+	const [nickName, setNickName] = React.useState()
+	const [userSlug, setUserSlug] = React.useState()
+	const [squads, setSquads] = React.useState([])
+	const [squadsInvited, setSquadsInvited] = React.useState([])
+
+	async function refreshUserSquads() {
+		const response = await axios.get("http://192.168.0.101:5000/SquadUser/User/1")
+		if (response.status === 200) {
+			setSquads(response.data.filter(x => x.accepted === true))
+			setSquadsInvited(response.data.filter(x => x.accepted === null))
+		}
+	}
+
+	React.useEffect(() => {
+		async function getUserInfo(params) {
+			const response = await axios.get("http://192.168.0.101:5000/User/1")
+			if (response.status === 200) {
+				setUserName(response.data.username);
+				setNickName(response.data.nickname);
+				setUserSlug(response.data.slug)
+			}
+		}
+		async function getUserSquads() {
+			const response = await axios.get("http://192.168.0.101:5000/SquadUser/User/1")
+			if (response.status === 200) {
+				setSquads(response.data.filter(x => x.accepted === 1))
+				setSquadsInvited(response.data.filter(x => x.accepted === null))
+			}
+		}
+		getUserInfo();
+		getUserSquads();
+	}, [])
+	return (
+		<div className="homeWrapper">
+			<div>
+				<h1 className="h1">Home</h1>
+				<h2 className="userName">{userName}</h2>
+				<div className="nickName">
+					<h3>{nickName}</h3>
+					<h4 className="h4">#{userSlug}</h4>
+				</div>
+				<Divider sx={{ backgroundColor: '#FFFBF5' }} />
+			</div>
+			<div className="squadsList">
+				<h3>Squads that invited you</h3>
+				<List>{
+					squadsInvited.map((squad) => (
+						<Squad
+							key={squad.idSquad}
+							name={squad.name}
+							accepted={squad.accepted}
+							idSquadUser={squad.id}
+							refresh={refreshUserSquads}
+						/>))
+				}
+				</List>
+			</div>
+			<Divider sx={{ backgroundColor: '#FD4556' }} />
+			<div>
+				<h3>Your squads</h3>
+				<List>{
+					squads.map((squad) => (
+						<Squad
+							key={squad.id}
+							name={squad.name}
+							accepted={squad.accepted}
+						/>))
+				}
+				</List>
+			</div>
+			<div className="btnCreateSquad">
+				<Button variant="solid">Create squad</Button>
+			</div>
+		</div>
+	)
 }
