@@ -1,62 +1,83 @@
-import { Button, Grid, Input } from "@mui/joy";
+import React from "react";
 import axios from "axios";
-import React, { useState } from "react";
-import '../layouts/layout.css'
-export default function HomePage() {
-    const [username, setUsername] = useState("")
-    const [password, setPassword] = useState("")
-    //https://mui.com/joy-ui/getting-started/tutorial/
+import { Divider, Button, List } from "@mui/joy";
+import Squad from "../components/squad";
 
-    async function sendLog() {
-        try {
-            const response = await axios.post("http://192.168.0.101:5000/api/log", {
-                logText: username
-            })
-            alert(JSON.stringify(response));
-        } catch (error) {
-            alert(JSON.stringify(error));
-        }
+export default function Home() {
+	const [userName, setUserName] = React.useState()
+	const [nickName, setNickName] = React.useState()
+	const [userSlug, setUserSlug] = React.useState()
+	const [squads, setSquads] = React.useState([])
+	const [squadsInvited, setSquadsInvited] = React.useState([])
 
-    }
-    return (
-        <>
-            <Grid container gap={2} sx={{ flexGrow: 1 }}>
-                <Grid xs={12}>
-                    <Input placeholder="Type your username here.."
-                        sx={{
-                            '--Input-focusedInset': 'var(--any, )',
-                            '--Input-focusedThickness': '0.15rem',
-                            '--Input-focusedHighlight': '#fff',
-                            '&::before': {
-                                transition: 'box-shadow .15s ease-in-out',
-                            },
-                            '&:focus-within': {
-                                borderColor: '#fff',
-                            },
-                        }}
-                        size="sm" type="text" value={username} onChange={(evt) => setUsername(evt.target.value)} />
-                </Grid>
-                <Grid xs={12}>
-                    <Input placeholder="Type your password here.."
-                        sx={{
-                            '--Input-focusedInset': 'var(--any, )',
-                            '--Input-focusedThickness': '0.15rem',
-                            '--Input-focusedHighlight': '#fff',
-                            '&::before': {
-                                transition: 'box-shadow .15s ease-in-out',
-                            },
-                            '&:focus-within': {
-                                borderColor: '#fff',
-                            },
-                        }}
-                        size="sm" type="password" value={password} onChange={(evt) => setPassword(evt.target.value)} />
-                </Grid>
-                <Grid xs={4} />
-                <Grid xs={3}>
-                    <Button onClick={sendLog} fullWidth="true">Logar</Button>
-                </Grid>
-                <Grid xs={4} />
-            </Grid>
-        </>
-    );
+	async function refreshUserSquads() {
+		const response = await axios.get("http://192.168.0.101:5000/SquadUser/User/1")
+		if (response.status === 200) {
+			setSquads(response.data.filter(x => x.accepted === true))
+			setSquadsInvited(response.data.filter(x => x.accepted === null))
+		}
+	}
+
+	React.useEffect(() => {
+		async function getUserInfo(params) {
+			const response = await axios.get("http://192.168.0.101:5000/User/1")
+			if (response.status === 200) {
+				setUserName(response.data.username);
+				setNickName(response.data.nickname);
+				setUserSlug(response.data.slug)
+			}
+		}
+		async function getUserSquads() {
+			const response = await axios.get("http://192.168.0.101:5000/SquadUser/User/1")
+			if (response.status === 200) {
+				setSquads(response.data.filter(x => x.accepted === 1))
+				setSquadsInvited(response.data.filter(x => x.accepted === null))
+			}
+		}
+		getUserInfo();
+		getUserSquads();
+	}, [])
+	return (
+		<div className="homeWrapper">
+			<div>
+				<h1 className="h1">Home</h1>
+				<h2 className="userName">{userName}</h2>
+				<div className="nickName">
+					<h3>{nickName}</h3>
+					<h4 className="h4">#{userSlug}</h4>
+				</div>
+				<Divider sx={{ backgroundColor: '#FFFBF5' }} />
+			</div>
+			<div className="squadsList">
+				<h3>Squads that invited you</h3>
+				<List>{
+					squadsInvited.map((squad) => (
+						<Squad
+							key={squad.idSquad}
+							name={squad.name}
+							accepted={squad.accepted}
+							idSquadUser={squad.id}
+							refresh={refreshUserSquads}
+						/>))
+				}
+				</List>
+			</div>
+			<Divider sx={{ backgroundColor: '#FD4556' }} />
+			<div>
+				<h3>Your squads</h3>
+				<List>{
+					squads.map((squad) => (
+						<Squad
+							key={squad.id}
+							name={squad.name}
+							accepted={squad.accepted}
+						/>))
+				}
+				</List>
+			</div>
+			<div className="btnCreateSquad">
+				<Button variant="solid">Create squad</Button>
+			</div>
+		</div>
+	)
 }

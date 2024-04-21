@@ -1,7 +1,11 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom"
-import Home from "./pages/home"
+import Login from "./pages/login"
 import User from "./pages/user"
 import Layout from "./layouts/layout";
+import MainPage from "./layouts/mainPage";
+import Agents from "./pages/agents";
+import Error from "./pages/error";
+import Home from "./pages/home";
 import { CssVarsProvider, extendTheme } from '@mui/joy/styles';
 
 const compSquadTheme = extendTheme({
@@ -37,7 +41,7 @@ const compSquadTheme = extendTheme({
           '&:focus': theme.focus.default,
           fontWeight: 600,
           ...(ownerState.size === 'md' && {
-            borderRadius: '0.375rem',
+            //borderRadius: '0.375rem',
             paddingInline: '1rem',
           }),
         }),
@@ -47,20 +51,25 @@ const compSquadTheme = extendTheme({
 });
 
 function App() {
- return (
-  <CssVarsProvider theme={compSquadTheme}>
-   <div className="App">
-     <BrowserRouter>
-       <Routes>
-         <Route element={<Layout />} >
-           <Route path="/" element={<Home />} />
-           <Route path="/user/:id" element={<User />} />
-         </Route>
-       </Routes>
-     </BrowserRouter>
-   </div>
-  </CssVarsProvider>
- )
+  return (
+    <CssVarsProvider theme={compSquadTheme}>
+      <div className="App">
+        <BrowserRouter>
+          <Routes>
+            <Route element={<Layout />} >
+              <Route path="/" element={<Login />} />
+            </Route>
+            <Route element={<MainPage />} >
+              <Route path="/user/:id" element={<User />} />
+              <Route path="/agents" element={<Agents />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="*" element={<Error />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </CssVarsProvider>
+  )
 }
 
 export default App
