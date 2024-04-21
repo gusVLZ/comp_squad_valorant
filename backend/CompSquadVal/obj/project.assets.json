@@ -2859,11 +2859,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gvnv2\\Documents\\backend\\CompSquadVal\\CompSquadVal.csproj",
+      "projectUniqueName": "C:\\Users\\gvnv2\\Documents\\github\\comp_squad_valorant\\backend\\CompSquadVal\\CompSquadVal.csproj",
       "projectName": "CompSquadVal",
-      "projectPath": "C:\\Users\\gvnv2\\Documents\\backend\\CompSquadVal\\CompSquadVal.csproj",
+      "projectPath": "C:\\Users\\gvnv2\\Documents\\github\\comp_squad_valorant\\backend\\CompSquadVal\\CompSquadVal.csproj",
       "packagesPath": "C:\\Users\\gvnv2\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gvnv2\\Documents\\backend\\CompSquadVal\\obj\\",
+      "outputPath": "C:\\Users\\gvnv2\\Documents\\github\\comp_squad_valorant\\backend\\CompSquadVal\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\gvnv2\\AppData\\Roaming\\NuGet\\NuGet.Config"

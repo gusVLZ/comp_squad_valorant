@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\gvnv2\\Documents\\backend\\CompSquadVal\\CompSquadVal.csproj": {}
+    "c:\\Users\\gvnv2\\Documents\\github\\comp_squad_valorant\\backend\\CompSquadVal\\CompSquadVal.csproj": {}
   },
   "projects": {
-    "c:\\Users\\gvnv2\\Documents\\backend\\CompSquadVal\\CompSquadVal.csproj": {
+    "c:\\Users\\gvnv2\\Documents\\github\\comp_squad_valorant\\backend\\CompSquadVal\\CompSquadVal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\gvnv2\\Documents\\backend\\CompSquadVal\\CompSquadVal.csproj",
+        "projectUniqueName": "c:\\Users\\gvnv2\\Documents\\github\\comp_squad_valorant\\backend\\CompSquadVal\\CompSquadVal.csproj",
         "projectName": "CompSquadVal",
-        "projectPath": "c:\\Users\\gvnv2\\Documents\\backend\\CompSquadVal\\CompSquadVal.csproj",
+        "projectPath": "c:\\Users\\gvnv2\\Documents\\github\\comp_squad_valorant\\backend\\CompSquadVal\\CompSquadVal.csproj",
         "packagesPath": "C:\\Users\\gvnv2\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\gvnv2\\Documents\\backend\\CompSquadVal\\obj\\",
+        "outputPath": "c:\\Users\\gvnv2\\Documents\\github\\comp_squad_valorant\\backend\\CompSquadVal\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gvnv2\\AppData\\Roaming\\NuGet\\NuGet.Config"

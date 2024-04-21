@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1bpPWEWXiBeGmdrynLBvlmWapgrQK+YU3Evb6qQ63kQb9kjFr0V+q1SY1AE61IQUt7hGDJMp7iLWIpucFjqtpg==",
+  "dgSpecHash": "OMgbucy0XE/bBgb0VBdQazKJEHR/47lXIdOkT/YhY//AhJd48kABy30RcI4LXg9gwny/6RzYtaupAWtEVC3f6w==",
   "success": true,
-  "projectFilePath": "c:\\Users\\gvnv2\\Documents\\backend\\CompSquadVal\\CompSquadVal.csproj",
+  "projectFilePath": "c:\\Users\\gvnv2\\Documents\\github\\comp_squad_valorant\\backend\\CompSquadVal\\CompSquadVal.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gvnv2\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\gvnv2\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
