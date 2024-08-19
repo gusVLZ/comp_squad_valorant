@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CompSquadVal")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+95f01e852732a392ebd55d5518be797a1e774fce")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5eb9c9582c471dd30763427c871be3771769bf58")]
 [assembly: System.Reflection.AssemblyProductAttribute("CompSquadVal")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CompSquadVal")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

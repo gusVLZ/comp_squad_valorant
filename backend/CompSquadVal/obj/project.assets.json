@@ -2854,19 +2854,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\gvnv2\\.nuget\\packages\\": {}
+    "C:\\Users\\biali\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gvnv2\\Documents\\github\\comp_squad_valorant\\backend\\CompSquadVal\\CompSquadVal.csproj",
+      "projectUniqueName": "C:\\Users\\biali\\Personal-Projects\\comp_squad_valorant\\backend\\CompSquadVal\\CompSquadVal.csproj",
       "projectName": "CompSquadVal",
-      "projectPath": "C:\\Users\\gvnv2\\Documents\\github\\comp_squad_valorant\\backend\\CompSquadVal\\CompSquadVal.csproj",
-      "packagesPath": "C:\\Users\\gvnv2\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gvnv2\\Documents\\github\\comp_squad_valorant\\backend\\CompSquadVal\\obj\\",
+      "projectPath": "C:\\Users\\biali\\Personal-Projects\\comp_squad_valorant\\backend\\CompSquadVal\\CompSquadVal.csproj",
+      "packagesPath": "C:\\Users\\biali\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\biali\\Personal-Projects\\comp_squad_valorant\\backend\\CompSquadVal\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\gvnv2\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\biali\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -2939,7 +2939,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

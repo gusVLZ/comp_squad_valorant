@@ -8,7 +8,7 @@ import axios from "axios";
 export default function Squad(props) {
 	
 		async function acceptOrDenyInvite(accepted, idSquadUser) {
-			const req = await axios.put(`http://192.168.0.101:5000/SquadInvite?accepted=${accepted}&idSquadUser=${idSquadUser}`)
+			const req = await axios.put(`http://127.0.0.1:5000/SquadInvite?accepted=${accepted}&idSquadUser=${idSquadUser}`)
 			props.refresh()
 		}
 		

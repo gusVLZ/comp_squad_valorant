@@ -26,7 +26,7 @@ public class PrefAgentRepository : IPrefAgentRepository
     }
 
     public List<PrefAgent> PrefsPerUser(int idUser) {
-        var prefAgentList = _dapper.GetConnection().Query<PrefAgent>($"select * from useragentpref where idUser = '{idUser}'");
+        var prefAgentList = _dapper.GetConnection().Query<PrefAgent>($"select * from prefagent where idUser = '{idUser}'");
         return prefAgentList.ToList();
     }
     public Boolean InsertPrefList(List<PrefAgent> prefList)

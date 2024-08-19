@@ -9,9 +9,9 @@ export default function Home() {
 	const [userSlug, setUserSlug] = React.useState()
 	const [squads, setSquads] = React.useState([])
 	const [squadsInvited, setSquadsInvited] = React.useState([])
-
+	const id = sessionStorage.getItem("id")
 	async function refreshUserSquads() {
-		const response = await axios.get("http://192.168.0.101:5000/SquadUser/User/1")
+		const response = await axios.get(`http://127.0.0.1:5000/SquadUser/User/${id}`)
 		if (response.status === 200) {
 			setSquads(response.data.filter(x => x.accepted === true))
 			setSquadsInvited(response.data.filter(x => x.accepted === null))
@@ -20,7 +20,7 @@ export default function Home() {
 
 	React.useEffect(() => {
 		async function getUserInfo(params) {
-			const response = await axios.get("http://192.168.0.101:5000/User/1")
+			const response = await axios.get(`http://127.0.0.1:5000/User/${id}`)
 			if (response.status === 200) {
 				setUserName(response.data.username);
 				setNickName(response.data.nickname);
@@ -28,7 +28,7 @@ export default function Home() {
 			}
 		}
 		async function getUserSquads() {
-			const response = await axios.get("http://192.168.0.101:5000/SquadUser/User/1")
+			const response = await axios.get(`http://127.0.0.1:5000/SquadUser/User/${id}`)
 			if (response.status === 200) {
 				setSquads(response.data.filter(x => x.accepted === 1))
 				setSquadsInvited(response.data.filter(x => x.accepted === null))

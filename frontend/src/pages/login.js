@@ -2,15 +2,20 @@ import { Button, Grid, Input } from "@mui/joy";
 import axios from "axios";
 import React, { useState } from "react";
 import '../layouts/layout.css'
+import  { useNavigate } from 'react-router-dom' 
 export default function Login() {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
+    const nav = useNavigate()
 
-    async function sendLog() {
+    async function login() {
         try {
-            const response = await axios.post("http://192.168.0.101:5000/api/log", {
-                logText: username
-            })
+            const response = await axios.get(`http://127.0.0.1:5000/UserLogin?username=${username}&password=${password}`)
+            if(response.status === 200){
+                sessionStorage.setItem("id", response.data.id)
+                return nav(`/home`);
+            }
+
             alert(JSON.stringify(response));
         } catch (error) {
             alert(JSON.stringify(error));
@@ -52,7 +57,7 @@ export default function Login() {
                 </Grid>
                 <Grid xs={4} />
                 <Grid xs={3}>
-                    <Button onClick={sendLog} fullWidth="true">Logar</Button>
+                    <Button onClick={login} fullWidth="true">Logar</Button>
                 </Grid>
                 <Grid xs={4} />
             </Grid>

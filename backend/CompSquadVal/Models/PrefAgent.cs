@@ -2,7 +2,7 @@ namespace CompSquadVal.Models;
 using Dapper;
 using Dapper.Contrib.Extensions;
 
-[Table("useragentpref")]
+[Table("prefagent")]
 public class PrefAgent
 {
     [Key]

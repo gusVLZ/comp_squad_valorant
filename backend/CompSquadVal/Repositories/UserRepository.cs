@@ -31,7 +31,7 @@ public class UserRepository : IUserRepository
     }
 
     public UserLoginDTO CheckLogin(string userName, string password) {
-        var user = _dapper.GetConnection().QueryFirst<UserLoginDTO>($"select username, password from user where username = '{userName}' and password = {password}");
+        var user = _dapper.GetConnection().QueryFirst<UserLoginDTO>($"select id, username, password from user where username = '{userName}' and password = '{password}'");
         return user;
     }
 

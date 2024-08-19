@@ -1,6 +1,6 @@
 .mainPage{
     min-height: 90vh;
-    margin: 2%;
+    margin: 5%;
     padding: 0.5% 1% 1% 1%;
     background-color: #2c3143;
     color: #FFFBF5;
@@ -20,6 +20,7 @@
     justify-content: space-between;
     flex-direction: column;
     min-height: 100%;
+    margin: 3%;
 }
 
 .h2{
@@ -52,6 +53,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 3%;
 }
 
 .toggleBtn{

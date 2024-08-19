@@ -11,7 +11,7 @@ export default function Agents() {
 
 	React.useEffect(() => {
 		async function getAgents(params) {
-			const response = await axios.get("http://192.168.0.101:5000/Agent")
+			const response = await axios.get("http://127.0.0.1:5000/Agent")
 			if (response.status === 200) {
 				setAgents(response.data);
 				setFilteredAgents(response.data);
