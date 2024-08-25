@@ -1,0 +1,52 @@
+.squadName {
+    font-family: "Valorant";
+    color: #FD4556;
+    margin-bottom: 10px;
+}
+
+.wrapper{
+    margin: 3%;
+}
+
+.membersSubtitle{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.squadMembers{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.addMemberLabel{
+    margin-top: 20px;
+}
+
+.addMemberLabel h4{
+    margin-bottom: 15px;
+}
+
+.addMemberButton{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    color: #FD4556;
+}
+
+.css-iijj38-JoyButton-root{
+    border-color: #FD4556 !important;
+    color: #FFFBF5 !important;
+}
+
+.pageTitle{
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+.css-1hfkybe-JoyInput-root:not([data-skip-inverted-colors]){
+    --_Input-focusedHighlight: #fff !important;
+    --Input-focusedHighlight: #fff !important
+}

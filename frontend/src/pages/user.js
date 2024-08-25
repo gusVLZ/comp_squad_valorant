@@ -12,6 +12,7 @@ export default function UserPage() {
     }
     setOpen(inOpen);
   };
+  
   return (
     <Box>
       <Button variant="solid" sx={{backgroundColor: "FD4556"}} onClick={toggleDrawer(true)}>

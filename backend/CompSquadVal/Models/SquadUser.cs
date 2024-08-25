@@ -11,6 +11,6 @@ public class SquadUser
     public int idUsuario {get;set;}
     public int? accepted {get;set;}
 
-    [Write (false)]
+    
     public string name {get;set;}
 }

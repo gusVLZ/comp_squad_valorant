@@ -1,6 +1,6 @@
 import { Outlet, useNavigate } from "react-router-dom";
 import React from "react";
-import './mainPage.css'
+import '../style/mainPage.css'
 import { Drawer, Box, List, ListItem, ListItemButton, Divider, IconButton } from "@mui/joy";
 import MenuIcon from '@mui/icons-material/Menu';
 

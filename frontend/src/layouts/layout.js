@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import './layout.css'
+import '../style/layout.css'
 import { useState } from "react";
 import MainPage from "./mainPage";
 

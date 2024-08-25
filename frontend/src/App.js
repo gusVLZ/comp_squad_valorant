@@ -6,6 +6,7 @@ import MainPage from "./layouts/mainPage";
 import Agents from "./pages/agents";
 import Error from "./pages/error";
 import Home from "./pages/home";
+import SquadProfile from "./pages/squadProfile";
 import { CssVarsProvider, extendTheme } from '@mui/joy/styles';
 
 const compSquadTheme = extendTheme({
@@ -64,6 +65,7 @@ function App() {
               <Route path="/agents" element={<Agents />} />
               <Route path="/home" element={<Home />} />
               <Route path="*" element={<Error />} />
+              <Route path="/squadProfile/:id" element={<SquadProfile />}/>
             </Route>
           </Routes>
         </BrowserRouter>

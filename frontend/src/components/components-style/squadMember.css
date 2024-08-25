@@ -1,0 +1,12 @@
+.listItemSquadMember{
+    background-color: #4d555e;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.removeMemberButton{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+

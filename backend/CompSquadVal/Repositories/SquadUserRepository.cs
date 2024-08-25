@@ -17,6 +17,12 @@ public class SquadUserRepository : ISquadUserRepository
         var squadUserList = _dapper.GetConnection().Query<SquadUser>($"SELECT u.*, s.name FROM squaduser u LEFT JOIN squad s ON u.idSquad = s.id WHERE u.idUsuario = {idUser} AND s.active = 1");
         return squadUserList.ToList();
     }
+
+    public List<SquadUser> GetSquadMembers(int idSquad)
+    {
+        var squadMembersList = _dapper.GetConnection().Query<SquadUser>($"SELECT u.id, u.username as name, su.id FROM user u INNER JOIN squaduser su ON su.idUsuario = u.id WHERE su.idSquad = {idSquad}");
+        return squadMembersList.ToList();
+    }
     
     public Boolean InsertSquadUserList(List<SquadUser> squadUserList)
     {

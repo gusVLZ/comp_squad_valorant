@@ -68,12 +68,14 @@ export default function Home() {
 				<List>{
 					squads.map((squad) => (
 						<Squad
-							key={squad.id}
+							key={squad.createDate}
+							idSquad = {squad.id}
 							name={squad.name}
 							accepted={squad.accepted}
 						/>))
 				}
 				</List>
+				<Divider sx={{ backgroundColor: '#FFFBF5' }} />
 			</div>
 			<div className="btnCreateSquad">
 				<Button variant="solid">Create squad</Button>

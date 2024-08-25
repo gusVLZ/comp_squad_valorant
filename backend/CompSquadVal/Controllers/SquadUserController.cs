@@ -21,6 +21,11 @@ public class SquadUserController : ControllerBase
         return Ok(_squadUserRepository.GetSquadByUserID(id));
     }
 
+    [HttpGet("/SquadUser/Squad/Members/{id}")]
+    public IActionResult SquadMembers(int id) {
+        return Ok(_squadUserRepository.GetSquadMembers(id));
+    }
+
     [HttpPost("/SquadUser")]
     public IActionResult InsertSquadUserList([FromBody] List<SquadUser> squadUserList)
     {

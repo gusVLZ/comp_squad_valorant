@@ -2,7 +2,7 @@ import React from "react";
 import { List, ToggleButtonGroup, Button } from "@mui/joy";
 import axios from "axios";
 import AgentPreference from "../components/agentPreference";
-import '../layouts/mainPage.css'
+import '../style/mainPage.css'
 
 export default function Agents() {
 	const [agents, setAgents] = React.useState([])
