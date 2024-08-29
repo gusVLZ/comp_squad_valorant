@@ -26,6 +26,10 @@
     margin-bottom: 15px;
 }
 
+.addMemberInput{
+    display: flex;
+}
+
 .addMemberButton{
     margin-top: 20px;
     display: flex;

@@ -8,4 +8,5 @@ public interface IUserRepository{
 
     UserDTO GetUserById(int id);
     UserLoginDTO CheckLogin(string userName, string password);
+    List<UserDTO> GetUserByUsername(string username);
 }

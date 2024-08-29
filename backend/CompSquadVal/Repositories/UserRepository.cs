@@ -35,6 +35,11 @@ public class UserRepository : IUserRepository
         return user;
     }
 
+    public List<UserDTO> GetUserByUsername(string username) {
+        var userList = _dapper.GetConnection().Query<UserDTO>($"SELECT id, username, slug FROM user WHERE username LIKE '%{username}%'");
+        return userList.ToList();
+    }
+
 
 
 

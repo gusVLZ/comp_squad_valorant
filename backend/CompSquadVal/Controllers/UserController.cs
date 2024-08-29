@@ -35,6 +35,16 @@ public class UserController : ControllerBase
     public IActionResult ChecKlogin(string userName, string password) {
         return Ok(_userRepository.CheckLogin(userName, password));
     }
-    
+
+    [HttpGet("/User/Search/{username}")]
+    public IActionResult GetByUsername(string username) {
+        
+        if (string.IsNullOrEmpty(username) || username.Length < 3)
+        {
+            return BadRequest("3 characters minimum");
+        }
+
+        return Ok(_userRepository.GetUserByUsername(username));
+    }
 
 }
